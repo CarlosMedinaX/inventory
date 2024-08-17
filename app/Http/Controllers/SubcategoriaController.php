@@ -19,12 +19,9 @@ class SubcategoriaController extends Controller
         ->get();
 
         // en la vista create me trae las categorias
-        $categorias = DB::table('categorias')->select('id','nombreCategoria')->distinct()->get();
+        $categorias = Categoria::orderBy('nombreCategoria')->get();
 
-        $categorias2 = Categoria::select('nombreCategoria', 'id')->distinct()->get();
-
-
-        return view('subcategorias.index', compact('subcategorias', 'categorias', 'categorias2'));
+        return view('subcategorias.index', compact('subcategorias', 'categorias'));
 
         
     }
