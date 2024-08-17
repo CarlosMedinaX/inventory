@@ -49,7 +49,7 @@ class ProductoController extends Controller
         ->join('estantes', 'productos.estante_id', '=', 'estantes.id')
         ->join('productos_x_suppliers', 'productos.id', '=', 'productos_x_suppliers.producto_id')
         ->join('suppliers', 'productos_x_suppliers.supplier_id', '=', 'suppliers.id')
-        ->orderBy()
+        ->orderBy('productos.id')
         ->get();
 
 
