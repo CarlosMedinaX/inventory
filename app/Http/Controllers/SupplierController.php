@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SupplierRequest;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class SupplierController extends Controller
 {
@@ -13,6 +14,16 @@ class SupplierController extends Controller
         $suppliers = Supplier::orderBy('supplier_name', 'asc')->get();
 
         return view('suppliers.index', compact('suppliers'));
+    }
+
+    public function pdf(){
+
+        $suppliers = Supplier::orderBy('id')->get();
+
+        $pdf = Pdf::loadView('suppliers.pdf', compact('suppliers'));
+        return $pdf->download('invoice.pdf'); 
+
+        return view('suppliers.pdf', compact('suppliers'));
     }
 
     public function store(SupplierRequest $request)

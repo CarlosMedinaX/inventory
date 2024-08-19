@@ -8,6 +8,7 @@ use App\Models\Subcategoria;
 use App\Models\Supplier;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 
 class ProductoController extends Controller
@@ -58,7 +59,10 @@ class ProductoController extends Controller
         $estantes = DB::table('estantes')->get();
         $suppliers = DB::table('suppliers')->get();
 
-        return view('productos.pdf', compact('productos', 'subcategorias', 'estantes', 'suppliers'));
+        $pdf = Pdf::loadView('productos.pdf', compact('productos', 'subcategorias', 'estantes', 'suppliers'));
+        return $pdf->download('invoice.pdf'); 
+
+        // return view('productos.pdf', compact('productos', 'subcategorias', 'estantes', 'suppliers'));
     }
 
     /**

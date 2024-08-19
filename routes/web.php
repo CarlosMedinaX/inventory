@@ -18,6 +18,7 @@ Route::resource('categorias', CategoriaController::class);
 Route::resource('subcategorias', SubcategoriaController::class);
 Route::resource('estantes', EstanteController::class);
 Route::resource('proveedores', ProveedorController::class);
+Route::get('suppliers/pdf', [SupplierController::class, 'pdf']);
 Route::resource('suppliers', SupplierController::class);
 Route::get('productos/pdf', [ProductoController::class, 'pdf']);
 Route::resource('productos', ProductoController::class);

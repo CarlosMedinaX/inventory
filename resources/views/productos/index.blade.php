@@ -15,9 +15,9 @@
   </button>
   &nbsp;
   <a href="{{url('productos/pdf')}}" style="text-decoration: none; color:inherit">
-  <button type="button" class="btn btn-success mb-4">
-      PDF
-    </button>
+    <button type="button" class="btn btn-light border border-dark mb-4">
+      Reporte PDF
+      </button>
   </a>
 </div>
 
