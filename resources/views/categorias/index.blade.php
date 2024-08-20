@@ -7,6 +7,12 @@
   <button type="button" class="btn btn-success mb-4" data-bs-toggle="modal"         data-bs-target="#create">
     Nueva categoria
   </button>
+  &nbsp;
+  <a href="{{url('categorias/pdf')}}">
+  <button type="button" class="btn btn-light border border-black mb-4">
+    Reporte PDF
+  </button>
+</a>
 </div>
 <div class="container">
   <div class="row justify-content-center">

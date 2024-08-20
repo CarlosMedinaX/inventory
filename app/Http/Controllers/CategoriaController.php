@@ -8,6 +8,7 @@ use App\Models\Categoria;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 
 class CategoriaController extends Controller
@@ -18,6 +19,16 @@ class CategoriaController extends Controller
 
 
         return view('categorias.index', compact('categorias'));
+    }
+
+    public function pdf(){
+
+        $categorias = Categoria::orderBy('id')->get();
+
+        $pdf = Pdf::loadView('categorias.pdf', compact('categorias'));
+        return $pdf->download('invoice.pdf');
+
+        // return  view('categorias.pdf', compact('categorias'));
     }
 
     public function create(){

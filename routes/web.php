@@ -8,13 +8,15 @@ use App\Http\Controllers\EstanteController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\SupplierController;
-
+use App\Models\Categoria;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('categorias/pdf', [CategoriaController::class, 'pdf']);
 Route::resource('categorias', CategoriaController::class);
+Route::get('subcategorias/pdf', [SubcategoriaController::class, 'pdf']);
 Route::resource('subcategorias', SubcategoriaController::class);
 Route::resource('estantes', EstanteController::class);
 Route::resource('proveedores', ProveedorController::class);

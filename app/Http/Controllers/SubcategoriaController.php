@@ -7,6 +7,7 @@ use App\Models\Categoria;
 use App\Models\Subcategoria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class SubcategoriaController extends Controller
 {
@@ -24,6 +25,20 @@ class SubcategoriaController extends Controller
         return view('subcategorias.index', compact('subcategorias', 'categorias'));
 
         
+    }
+
+    public function pdf(){
+
+        $subcategorias = Subcategoria::with('categoria')
+        ->select('subcategorias.id','subcategorias.nombreSubcategoria', 'categorias.nombreCategoria', 'subcategorias.categoria_id')
+        ->join('categorias', 'subcategorias.categoria_id', '=', 'categorias.id')
+        ->get();
+
+        
+        $pdf = Pdf::loadView('subcategorias.pdf', compact('subcategorias'));
+        return $pdf->download('invoice.pdf');
+
+        // return view('subcategorias.pdf', compact('subcategorias'));
     }
 
     public function edit(Subcategoria $subcategoria){

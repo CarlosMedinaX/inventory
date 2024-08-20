@@ -7,12 +7,12 @@ box-sizing: border-box;
 
 }
 h1{
-    text-align: center
+    text-align:left
 
 }
 
 table{
-  width: 100%;
+  width: 50%;
   border-collapse: collapse; 
   margin-top: 20px
 

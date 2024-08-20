@@ -23,7 +23,7 @@ class SupplierController extends Controller
         $pdf = Pdf::loadView('suppliers.pdf', compact('suppliers'));
         return $pdf->download('invoice.pdf'); 
 
-        return view('suppliers.pdf', compact('suppliers'));
+        // return view('suppliers.pdf', compact('suppliers'));
     }
 
     public function store(SupplierRequest $request)

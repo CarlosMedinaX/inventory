@@ -6,6 +6,12 @@
   <button type="button" class="btn btn-success mb-4" data-bs-toggle="modal"  data-bs-target="#create" >
     Nueva subcategoria
   </button>
+  &nbsp;
+  <a href="{{url('subcategorias/pdf')}}">
+  <button type="button" class="btn btn-light border border-dark mb-4" >
+    Reportar PDF
+  </button>
+</a>
 </div>
 
 <div class="contrainer">
