@@ -60,7 +60,7 @@ class ProductoController extends Controller
         $suppliers = DB::table('suppliers')->get();
 
         $pdf = Pdf::loadView('productos.pdf', compact('productos', 'subcategorias', 'estantes', 'suppliers'));
-        return $pdf->download('invoice.pdf'); 
+        return $pdf->download('lista-producto.pdf'); 
 
         // return view('productos.pdf', compact('productos', 'subcategorias', 'estantes', 'suppliers'));
     }

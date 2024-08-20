@@ -26,7 +26,7 @@ class CategoriaController extends Controller
         $categorias = Categoria::orderBy('id')->get();
 
         $pdf = Pdf::loadView('categorias.pdf', compact('categorias'));
-        return $pdf->download('invoice.pdf');
+        return $pdf->download('lista-categorias.pdf');
 
         // return  view('categorias.pdf', compact('categorias'));
     }

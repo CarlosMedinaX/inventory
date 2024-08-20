@@ -21,7 +21,7 @@ class SupplierController extends Controller
         $suppliers = Supplier::orderBy('id')->get();
 
         $pdf = Pdf::loadView('suppliers.pdf', compact('suppliers'));
-        return $pdf->download('invoice.pdf'); 
+        return $pdf->download('suppliers-list.pdf'); 
 
         // return view('suppliers.pdf', compact('suppliers'));
     }

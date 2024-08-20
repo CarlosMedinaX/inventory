@@ -6,6 +6,12 @@
   <button type="button" class="btn btn-success mb-4" data-bs-toggle="modal"         data-bs-target="#create">
     Nuevo estante
   </button>
+  &nbsp;
+  <a href="{{url('estantes/pdf')}}">
+  <button type="button" class="btn btn-light border border-dark mb-4">
+    Reporte PDF
+  </button>
+</a>
 </div>
 <div class="container">
   <div class="row justify-content-center">

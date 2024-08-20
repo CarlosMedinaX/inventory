@@ -36,7 +36,7 @@ class SubcategoriaController extends Controller
 
         
         $pdf = Pdf::loadView('subcategorias.pdf', compact('subcategorias'));
-        return $pdf->download('invoice.pdf');
+        return $pdf->download('lista-subcategorias.pdf');
 
         // return view('subcategorias.pdf', compact('subcategorias'));
     }

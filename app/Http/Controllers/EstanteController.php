@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEstanteRequest;
 use App\Models\Estante;
 use Illuminate\Http\Request;
-
+use Barryvdh\DomPDF\Facade\Pdf;
 
 
 class EstanteController extends Controller
@@ -16,6 +16,14 @@ class EstanteController extends Controller
 
 
         return view('estantes.index', compact('estantes'));
+    }
+
+    public function pdf(){
+
+        $estantes = Estante::orderBy('id')->get();
+
+        $pdf = Pdf::loadView('estantes.pdf', compact('estantes'));
+        return $pdf->download('lista-estantes.pdf');
     }
 
     public function store(StoreEstanteRequest $request){
