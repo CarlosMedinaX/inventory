@@ -22,7 +22,7 @@
 </div>
 
 
-<div class="container">
+<div class="container table-responsive">
       <table class="table table-striped table-hover" id="inventory">
         <thead class="bg-dark text-white">
           
