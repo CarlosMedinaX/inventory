@@ -9,7 +9,7 @@
   
   {{-- @yield('css') --}}
   
-  <link  href="{{ asset('css/style.css') }}" rel="stylesheet"> 
+  @vite('resources/css/app.css')
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"  rel="stylesheet" >
   <link href="https://cdn.datatables.net/2.1.2/css/dataTables.bootstrap5.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -21,7 +21,7 @@
 {{-- lo que se coloque aqui va a aparecer en todas las paginas igual, esto sirve para mostrar el mismo, header o el mismo footer --}}
 <nav class="navbar navbar-expand-md bg-body-primary bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand mb-1" href="{{route('productos.index')}}">Productos</a>
+    <a class="navbar-brand mb" href="{{route('productos.index')}}">Productos</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -40,24 +40,21 @@
         </ul>
       </div> --}}
 
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mt-2">
         <li class="nav-item">
-          <a class="nav-link"  href="{{route ('suppliers.index')}}">Proveedores</a>
+          <a class="nav-link ps-1 {{ Request::routeIs('suppliers.index') ? 'active' : '' }}"  href="{{route ('suppliers.index')}}">Proveedores</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route("categorias.index")}}">Categorias</a>
+          <a class="nav-link ps-1  {{ Request::routeIs('categorias.index') ? 'active' : '' }}" href="{{route("categorias.index")}}">Categorias</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route("subcategorias.index")}}">Subcategorias</a>
+          <a class="nav-link ps-1 {{ Request::routeIs('subcategorias.index') ? 'active' : '' }}" href="{{route("subcategorias.index")}}">Subcategorias</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route("estantes.index")}}"  href="#">Estantes</a>
+          <a class="nav-link ps-1 {{ Request::routeIs('estantes.index') ? 'active' : '' }}" href="{{route("estantes.index")}}"  href="#">Estantes</a>
         </li>
       </ul>
-    <style>
 
-
-    </style>
       {{-- position-absolute end-0 me-3 --}}
       <div class="dropdown ms-auto bd-mode-toggle">
         <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"

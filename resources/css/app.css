@@ -1,0 +1,30 @@
+body{
+   overflow-x:hidden 
+}
+
+.navbar-toggler:hover{
+
+  color: rgb(78, 199, 98);
+  
+  }
+  
+  
+  .nav-link {
+  
+  color: rgb(255, 255, 255) !important;
+  text-decoration: none;
+  
+  }
+
+  .nav-link:hover{
+    
+    opacity: 0.4;
+
+
+  }
+
+  .nav-link.active {
+    background-color: #007BFF; 
+    border-radius: 5px; 
+    opacity: unset;
+}
