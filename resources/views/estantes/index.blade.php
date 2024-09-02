@@ -81,8 +81,8 @@
     <script>
       $('#inventory').DataTable({
         lengthMenu: [
-          [10, 5, 3, -1],
-          [10, 5, 3, 'All']
+          [3, 5, 10, -1],
+          [3, 5, 10, 'All']
         ],
         columnDefs: [
           { targets: 3, orderable: false } 
